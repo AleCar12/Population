@@ -12,3 +12,33 @@ main {
     margin: 5px 0px;
     height: 45px;
 }
+
+.country{
+    fill: #9ccc65;
+    stroke: black;
+    stroke-opacity: 0.4
+}
+
+
+
+.map {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .layer {
+    position: absolute;
+  }
+  
+  .tile {
+    pointer-events: none;
+    position: absolute;
+    width: 256px;
+    height: 256px;
+  }
+  
+  .info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
