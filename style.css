@@ -15,30 +15,6 @@ main {
 
 .country{
     fill: #9ccc65;
-    stroke: black;
-    stroke-opacity: 0.4
+    stroke: white;
+    stroke-opacity: 0.4;
 }
-
-
-
-.map {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .layer {
-    position: absolute;
-  }
-  
-  .tile {
-    pointer-events: none;
-    position: absolute;
-    width: 256px;
-    height: 256px;
-  }
-  
-  .info {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-  }
