@@ -15,8 +15,20 @@
 
     <!-- Import D3 -->
     <script src="https://d3js.org/d3.v3.min.js"></script>
+
     <!-- Import JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Import Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+    <!-- Import GeoJSON -->
+    <script type="text/javascript" src="js/geojson.min.js"></script>
     
     <!-- CSS - style.css -->
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
@@ -24,6 +36,8 @@
     <script src="/js/parallax.js"></script>
     <!-- Mobile menu JS -->
     <script src="/js/mobile-menu.js"></script>
+    <!-- worldClock JS -->
+    <script src="/js/worldClock.js"></script>
 </head>
 
 <body>
@@ -65,8 +79,9 @@
     <main>
         <div id="container">
 
-            <svg width="960" height="500"></svg>
-            <script src="/js/map.js"></script>
+            <div id="mapid"></div>
+
+            <script src="/js/leaflet.js"></script>
                 
         </div>
     </main>
