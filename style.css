@@ -13,8 +13,42 @@ main {
     height: 45px;
 }
 
+#headerGif{
+    transform: translate3d(-50%, 51.117px, 0px);
+}
+
+
 .country{
     fill: #9ccc65;
     stroke: white;
     stroke-opacity: 0.4;
+}
+
+#header{
+    margin-top: 75px;
+}
+
+#headerText{
+    text-shadow: 0px 0px 11px black
+}
+
+#worldClock{
+    font-size: 124px;
+    margin-top: 30px;
+    text-align: center;
+    text-shadow: 0px 0px 11px black;
+}
+/* worldClock Responsiveness */
+@media only screen and (max-width: 800px){
+    #worldClock{
+        font-size: 100px;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    #worldClock{
+        font-size: 75px;
+        margin-top: 15px;
+    }
 }
