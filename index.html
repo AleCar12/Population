@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Population</title>
     
+    <!-- Materialize -->
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
@@ -14,10 +15,10 @@
 
     <!-- Import D3 -->
     <script src="https://d3js.org/d3.v3.min.js"></script>
-    <!-- D3 - Topojson -->
-    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+    <!-- Import JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    <!-- CSS -->
+    <!-- CSS - style.css -->
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <!-- Parallax JS -->
     <script src="/js/parallax.js"></script>
@@ -28,33 +29,35 @@
 <body>
     <!-- Header -->
     <div class="parallax-container">
-    
+        
         <!-- Navbar -->
-        <nav class="transparent">
-            <div class="container nav-wrapper">
-                <a href="#!" class="left brand-logo"><img id="logo" src="images/Logo.png" alt="Logo"></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">link 3</a></li>
-                </ul>
-            </div>
-        </nav>
-    
-        <!-- Mobile navbar -->
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-        </ul>
+        <div>
+            <nav class="transparent">
+                <div class="container nav-wrapper">
+                    <a href="#!" class="left brand-logo"><img id="logo" src="images/Logo.png" alt="Logo"></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">link 3</a></li>
+                    </ul>
+                </div>
+            </nav>
+        
+            <!-- Mobile navbar -->
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </div>
     
     
         <!-- Parallax -->
         <div class="parallax"><img src="images/people.gif" class=""></div>
         <div class="container">
-            <h2 class="white-text">Current world population:</h2>
+            <h2 class="white-text">Current world population: <div id="worldClock"></div></h2>
         </div>
     </div>
     
