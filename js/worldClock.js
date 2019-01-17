@@ -15,18 +15,3 @@ d3.json("http://api.population.io:80/1.0/population/World/today-and-tomorrow/?fo
     //$("#worldClock").text(newWorldPopulationToday);
     
 });
-
-
-
-
-
-
-// Da spostare
-// Population-databank.csv
-d3.csv(" ./population-csv/population-databank.csv", function(data) {
-
-    for (i = 0; i < data.lenght; i++){
-        console.log(data[i]);
-    }
-
-});
