@@ -61,6 +61,8 @@ main {
 
 #mapid{ 
     height: 700px;
-    margin-right: 100px;
-    margin-left: 100px;
 }
+
+/* select {
+    all: unset !important;
+} */
