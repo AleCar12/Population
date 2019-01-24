@@ -60,7 +60,7 @@ main {
 
 /* Countries style */
 path {
-    stroke: white !important
+    stroke: #9ccc65 !important;
 }
 
 /* info box style */
