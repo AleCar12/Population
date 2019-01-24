@@ -17,12 +17,6 @@ main {
     transform: translate3d(-50%, 51.117px, 0px) !important;
 }
 
-.country{
-    fill: #9ccc65;
-    stroke: white;
-    stroke-opacity: 0.4;
-}
-
 #header{
     margin-top: 75px;
 }
@@ -37,6 +31,7 @@ main {
     text-align: center;
     text-shadow: 0px 0px 11px black;
 }
+
 /* worldClock Responsiveness */
 @media only screen and (max-width: 1300px){
     #worldClock{
@@ -63,6 +58,21 @@ main {
     height: 700px;
 }
 
-/* select {
-    all: unset !important;
-} */
+/* Countries style */
+path {
+    stroke: white !important
+}
+
+/* info box style */
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}

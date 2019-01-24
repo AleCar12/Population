@@ -19,7 +19,8 @@
     <script src="js/mobile-menu.js"></script>
     <!-- worldClock JS -->
     <script src="js/worldClock.js"></script>
-
+    
+    <!-- Handelbars JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     
     <!-- Import Leaflet CSS -->
@@ -30,7 +31,6 @@
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
-
 
     <!-- Materialize -->
     <!--Import Google Icon Font-->
@@ -78,58 +78,41 @@
     <!-- Content -->
     <main>
         <div class="container">
-        
-            <!-- <div class="input-field col s12">
-                <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <label>Materialize Select</label>
-            </div> -->
 
-
-            <!--Countries -->
+            <!--Countries list dropdown -->
             <div class="input-field col s12">
                 <select id="countriesList" class="browser-default">
-                    <!-- <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option> -->
-                    </select>
-                </div>
+                </select>
+            </div>
         </div>
         
-            <script id = "countriesTemplate" type = "text/x-handlebars-template" >
-       
-                <option value="{{ id }}">{{ country }}</option>
-                    
-            </script>
+        <!-- Handelbars template for countries list -->
+        <script id="countriesTemplate" type="text/x-handlebars-template">
+        
+            <option value="{{ id }}">{{ country }}</option>
+                
+        </script>
 
-
-
-
-
-
-            <div id="mapid">
-                <!-- Preloader -->
-                <div class="center-align">
-                <div class="preloader-wrapper big active">
-                    <div class="spinner-layer spinner-green-only">
-                        <div class="circle-clipper left">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="gap-patch">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="circle-clipper right">
-                            <div class="circle"></div>
-                        </div>
+        <!-- Map -->
+        <div id="mapid">
+            <!-- Preloader -->
+            <div class="center-align">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-green-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
                     </div>
                 </div>
-                </div>
             </div>
-            <script src="js/leaflet.js"></script>
+            </div>
+        </div>
+        <script src="js/leaflet.js"></script>
 
     </main>
 
