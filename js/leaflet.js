@@ -88,7 +88,7 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             } else if (population > 0) {
                 return '#edf8fb'
             } else {
-                return "transparent"
+                return "#D1D1D1"
             }
         }        
         
@@ -98,10 +98,10 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
                 countryData = populationData.filter(function(d) { return d['Country Code'] === countryId; }), // Il metodo filter degli array ritorna un array dei soli elementi che soddisfano l'uguaglianza: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
                 countryPopulation = 0;
 
-            if (countryData.length > 0) { // Hai trovato una corrispondenza
-                countryPopulation = parseInt(countryData[0]['']); // Prendo il primo e unico elemento trovato, prendo il valore più recente e lo faccio diventare un numero
+            if (countryData.length > 0) { // Finds one correspondence
+                countryPopulation = parseInt(countryData[0]['']); // Gets first element found
             } else {
-                countryPopulation = 0; // Assenza del dato = popolazione uguale a 0
+                countryPopulation = 0; // If data not found then 0
             }
 
             return {
@@ -152,27 +152,23 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
                 mouseout: resetHighlight,
                 click: zoomToFeature,
             });            
+
+            // Gets every country population
+            var countryId = feature.id,
+            countryData = populationData.filter(function(d) { return d['Country Code'] === countryId; }),
+            countryPopulation = 0;
             
-            // Prova ad aggiungere qui un popup che mostri il nome del paese e la sua popolazione...
-            // Vedi https://leafletjs.com/examples/geojson/ (capitolo onEachFeature)
-            // Occhio che il popup si apre al click sul paese e tu già sopra gli dici di zoomare...
-            // La popolazione la ricavi di nuovo come fatto prima nella funzione countryStyle
+            if (countryData.length > 0) {
+                countryPopulation = parseInt(countryData[0]['']); 
+            } else {
+                countryPopulation = 'NaN';
+            }
 
             // Shows countries name on click
             if (feature.properties.name) {
                 layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
-                                /*+ POPULATION*/ );
+                                + countryPopulation + ' ' + 'people');
             };
-
-            var countryId = feature.id,
-                countryData = populationData.filter(function(d) { return d['Country Code'] === countryId; }), // Il metodo filter degli array ritorna un array dei soli elementi che soddisfano l'uguaglianza: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-                countryPopulation = 0;
-
-            if (countryData.length > 0) { // Hai trovato una corrispondenza
-                countryPopulation = parseInt(countryData[0]['']); // Prendo il primo e unico elemento trovato, prendo il valore più recente e lo faccio diventare un numero
-            } else {
-                countryPopulation = 0; // Assenza del dato = popolazione uguale a 0
-            }
         };
 
         geojson = L.geoJson(
