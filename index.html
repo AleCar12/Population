@@ -15,11 +15,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <!-- Addons JS -->
     <script src="js/materializeAddons.js"></script>
-    <!-- Mobile menu JS -->
-    <script src="js/mobile-menu.js"></script>
     <!-- worldClock JS -->
     <script src="js/worldClock.js"></script>
-
+   
+    <!-- Handelbars js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     
     <!-- Import Leaflet CSS -->
@@ -30,7 +29,6 @@
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
-
 
     <!-- Materialize -->
     <!--Import Google Icon Font-->
@@ -49,23 +47,8 @@
         <div>
             <nav class="transparent">
                 <div class="container nav-wrapper">
-                    <a href="#!" class="left brand-logo"><img id="logo" src="images/Logo.png" alt="Logo"></a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">link 3</a></li>
-                    </ul>
-                </div>
+                    <div class="left brand-logo center-align"><img id="logo" src="images/Logo.png" alt="Logo"></div>
             </nav>
-        
-            <!-- Mobile navbar -->
-            <ul class="sidenav" id="mobile-demo">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-                <li><a href="#">Link 4</a></li>
-            </ul>
         </div>
     
         <!-- Parallax -->
@@ -79,39 +62,39 @@
     <main>
         <div class="container">
             <!--Countries dropdown list -->
-            <div class="input-field col s12">
-                <select id="countriesList" class="browser-default"></select>
+            <div class="input-field">
+                <select id="countriesList" class="browser-default col s8"></select>
             </div>
         </div>
 
-            <!-- Handelbars -->
-            <script id = "countriesTemplate" type = "text/x-handlebars-template" >
-       
-                <option value="{{ id }}">{{ country }}</option>
-                    
-            </script>
+        <!-- Handelbars -->
+        <script id = "countriesTemplate" type = "text/x-handlebars-template" >
+    
+            <option value="{{ id }}">{{ country }}</option>
+                
+        </script>
 
-            <!-- Leaflet Map -->
-            <div id="mapid">
-                <!-- Preloader -->
-                <div class="center-align">
-                <div class="preloader-wrapper big active">
-                    <div class="spinner-layer spinner-green-only">
-                        <div class="circle-clipper left">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="gap-patch">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="circle-clipper right">
-                            <div class="circle"></div>
-                        </div>
+        <!-- Leaflet Map -->
+        <div id="mapid">
+            <!-- Preloader -->
+            <div class="center-align">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-green-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
                     </div>
                 </div>
-                </div>
             </div>
-            <!-- Import map -->
-            <script src="js/leaflet.js"></script>
+            </div>
+        </div>
+        <!-- Import map -->
+        <script src="js/leaflet.js"></script>
     </main>
 
     <!-- Footer -->
@@ -119,24 +102,25 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
+                        <blockquote>
+                            <h5 class="white-text">Thank you for visiting our site</h5>
+                        </blockquote>
                     <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://alecarboni.myportfolio.com/">Portfolio</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.pinterest.it/alexcarboni12/">Pinterest</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/alessandrocarbonidesign/">Instagram</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://twitter.com/acarboni95">Twitter</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2019 Alessandro Carboni
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                <div class="center-align">© 2019 Alessandro Carboni</div>
             </div>
         </div>
     </footer>

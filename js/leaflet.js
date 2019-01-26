@@ -15,25 +15,7 @@ var CartoDB_PositronOnlyLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/
 d3.json("./countries/countries.geo.json", function(countriesData) {
     // Import csv
     d3.csv("./countries/population-databank.csv", function (populationData) {
-       
-
-// DA TOGLIERE
-        // Prendere id da CSV
-        // populationData[0]["Country Code"]
-
-        // Prendere id da geoJSON
-        // countriesData.features[i].id
-
-        // console.log(populationData);
         
-        // let idGeoJson = countriesData.features[0].id;
-        // console.log(idGeoJson);
-        
-        // let idCSV = populationData[0]["Country Code"];
-        // console.log(idCSV);
-// DA TOGLIERE
-
-
         // Countries list with Handelbars js
         var source = document.getElementById("countriesTemplate").innerHTML;
         var template = Handlebars.compile(source);
@@ -47,30 +29,6 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             var html = template(context);
             document.getElementById("countriesList").innerHTML += html;
         }
-        
-
-
-
-
-
-        // Info box
-        // var info = L.control();
-
-        // info.onAdd = function (map) {
-        //     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-        //     this.update();
-        //     return this._div;
-        // };
-
-        // // method that we will use to update the control based on feature properties passed
-        // info.update = function (props) {
-        //     this._div.innerHTML = '<h4>World Population</h4>' + (props ?
-        //     '<b>' + props.features.properties.name + '</b><br />' + props.density + ' people'
-        //     : 'Hover over a country');
-        // };
-
-        // info.addTo(map);
-
 
 
         // Choropleth countries
@@ -88,7 +46,7 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             } else if (population > 0) {
                 return '#edf8fb'
             } else {
-                return "#D1D1D1"
+                return '#D1D1D1'
             }
         }        
         
@@ -130,14 +88,10 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
                 layer.bringToFront();
             }
-
-            //info.update(layer.feature.properties);
-        }
-        
+        } 
         
         function resetHighlight(e) {
             geojson.resetStyle(e.target);
-            //info.update();
         }
         
         // Zoom on click
@@ -163,13 +117,17 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             } else {
                 countryPopulation = 'NaN';
             }
-
-            // Shows countries name on click
-            if (feature.properties.name) {
+            
+            // Shows countries name and population on click
+            if (feature.properties.name && countryPopulation != 'NaN') {
                 layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
-                                + countryPopulation + ' ' + 'people');
+                                + countryPopulation.toLocaleString() + ' ' + 'people' );
+            } else {
+                layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
+                                + countryPopulation.toLocaleString() );
             };
-        };
+            
+        }
 
         geojson = L.geoJson(
             countriesData,
