@@ -1,4 +1,4 @@
-var map = L.map('mapid', {scrollWheelZoom:false}).setView([37, -0.09], 2);
+var map = L.map('mapid').setView([20, -1], 3);
 
 // Crates map
 var CartoDB_PositronNoLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {

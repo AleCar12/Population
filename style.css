@@ -10,7 +10,7 @@ main {
 
 #logo{
     margin: 5px 0px;
-    height: 45px;
+    height: 70px;
 }
 
 #headerGif{
@@ -60,5 +60,5 @@ main {
 }
 
 #mapid{ 
-    height: 700px;
+    height: 850px;
 }
