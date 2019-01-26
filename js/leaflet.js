@@ -104,7 +104,7 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
                 countryPopulation = 0;
 
             if (countryData.length > 0) { // Hai trovato una corrispondenza
-                countryPopulation = parseInt(countryData[0]['']); // Prendo il primo e unico elemento trovato, prendo il valore del 2017 e lo faccio diventare un numero
+                countryPopulation = parseInt(countryData[0]['']); // Prendo il primo e unico elemento trovato, prendo il valore più recente e lo faccio diventare un numero
             } else {
                 countryPopulation = 0; // Assenza del dato = popolazione uguale a 0
             }
@@ -125,22 +125,22 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             
             layer.setStyle({
                 weight: 5,
-                color: '#fff',
+                color: '#000',
                 dashArray: '',
-                fillOpacity: 0.7
+                fillOpacity: 1
             });
         
             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
                 layer.bringToFront();
             }
 
-                info.update(layer.feature.properties);
+            //info.update(layer.feature.properties);
         }
         
         
         function resetHighlight(e) {
             geojson.resetStyle(e.target);
-            info.update();
+            //info.update();
         }
         
         // Zoom on click
@@ -154,24 +154,18 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
                 mouseover: highlightFeature,
                 mouseout: resetHighlight,
                 click: zoomToFeature,
-            });
-
-            
+            });            
             
             // Prova ad aggiungere qui un popup che mostri il nome del paese e la sua popolazione...
             // Vedi https://leafletjs.com/examples/geojson/ (capitolo onEachFeature)
             // Occhio che il popup si apre al click sul paese e tu già sopra gli dici di zoomare...
             // La popolazione la ricavi di nuovo come fatto prima nella funzione countryStyle
 
-
-        }
-                
-        // var geojson;
-
-// TEST MARKER+POPUP
-        function createMarker(latitude,longitude,popupContent){
-            L.marker([latitude,longitude]).addTo(map)
-		    .bindPopup(popupContent);
+            // Shows countries name on click
+            if (feature.properties.name) {
+                layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
+                                /*+ POPULATION*/ );
+            };
         }
 
 
@@ -181,9 +175,6 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
                 onEachFeature: onEachFeature,
                 style: countryStyle, // Dal tutorial: https://leafletjs.com/examples/choropleth/ (capitolo Adding Some Color, secondo blocco di codice)
             },
-
-            // POPUP TEST
-            createMarker(34.06961421319362, -118.44321762300109,"This was a marker made from our function!")
 
         ).addTo(map);
     });
