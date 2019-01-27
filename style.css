@@ -17,7 +17,7 @@ main {
 
 #logo{
     margin: 20px 0px;
-    height: 120px;
+    height: 200px;
 }
 
 .gifBg{
@@ -54,7 +54,7 @@ main {
 #alignBottom {
     position: relative;
     left: 0vh;
-    top: 20vh;
+    top: 10vh;
 }
 
 #sdGif{
@@ -103,4 +103,17 @@ main {
 
 #mapid{ 
     height: 90vh;
+    z-index: 0;
+}
+
+#helpMap{
+    position: absolute;
+    right: 5vh;
+    bottom: -95vh;
+    z-index: 1;
+}
+
+#mapModal{
+    position: relative;
+    bottom: 750px;
 }

@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Population</title>
+    <title>Population map</title>
+    <link rel="icon" href="images/faviconLogo.png" type="image/png" />
     
     <!-- Import JQuery -->
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -52,7 +53,7 @@
             
             <!-- Navbar -->
             <div class="center-align">
-                <img id="logo" src="images/Logo.png" alt="Logo">
+                <img id="logo" src="images/logo.png" alt="Logo">
             </div>
         
             <div class="valign-wrapper">
@@ -97,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
         
         <!-- Content -->
         <main class="section fp-auto-height-responsive">
@@ -116,9 +117,28 @@
             </script>
 
             <!-- Leaflet Map -->
-            <div id="mapid">
+            <div id="mapid"></div>
             <!-- Import map -->
             <script src="js/leaflet.js"></script>
+
+            <!-- Help action -->
+            <div>
+                <div id="mapModal" class="modal">
+                    <div class="modal-content">
+                        <p>
+                            <h4> Welcome, </h4>
+                            this site aims to make demography – the study of human populations – accessible
+                            to a wider audience. Demographic data can play an important role in understanding the social and
+                            economic developments of our time.
+                        </p>
+                    </div>
+                
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
+                <a href="#mapModal" class="btn-floating btn-large waves-effect waves-light green left modal-trigger" id="helpMap"><i class="large material-icons">help_outline</i></a>
+            </div>
         </main>
 
         <!-- Footer -->

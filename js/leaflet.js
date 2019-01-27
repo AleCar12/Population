@@ -30,7 +30,7 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             document.getElementById("countriesList").innerHTML += html;
         }
 
-
+        
         // Choropleth countries
         function getColor(population) {
             if (population > 50000000) { // 50 milioni
