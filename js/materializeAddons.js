@@ -16,3 +16,8 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.fixed-action-btn').floatingActionButton();
 });
+
+// Tooltips
+$(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });

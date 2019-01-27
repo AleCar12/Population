@@ -1,2 +1,2 @@
 # Population
-Website that analyzes the world population
+Website that shows the countries populations

@@ -37,6 +37,13 @@ main {
     font-size: 150px;
     margin-top: 40px;
     text-align: center;
+    /* Disabled text highlighting */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 .centerAlign{
@@ -67,12 +74,6 @@ main {
         font-size: 130px;
         margin-top: 30px;
     }
-
-    #alignBottom {
-        position: relative;
-        left: 0vh;
-        top: 0vh;
-    }
 }
 
 @media only screen and (max-width: 800px){
@@ -80,24 +81,12 @@ main {
         font-size: 100px;
         margin-top: 30px;
     }
-
-    #alignBottom {
-        position: relative;
-        left: 0vh;
-        top: 0vh;
-    }
 }
 
 @media only screen and (max-width: 640px){
     #worldClock{
         font-size: 60px;
         margin-top: 15px;
-    }
-
-    #alignBottom {
-        position: relative;
-        left: 0vh;
-        bottom: 0vh;
     }
 }
 
