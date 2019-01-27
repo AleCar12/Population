@@ -1,4 +1,4 @@
-var map = L.map('mapid').setView([20, -1], 3);
+var map = L.map('mapid', { scrollWheelZoom:false }).setView([20, -1], 2);
 
 // Crates map
 var CartoDB_PositronNoLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
@@ -71,9 +71,9 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             }
         }
         
-        // Map interaction
 
-        // Highlight feature
+        // Map interaction
+        // Highlight country layer
         function highlightFeature(e) {
             var layer = e.target;
             
@@ -117,17 +117,39 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             } else {
                 countryPopulation = 'NaN';
             }
-            
+
             // Shows countries name and population on click
             if (feature.properties.name && countryPopulation != 'NaN') {
                 layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
-                                + countryPopulation.toLocaleString() + ' ' + 'people' );
+                + countryPopulation.toLocaleString() + ' ' + 'people' );
             } else {
                 layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
-                                + countryPopulation.toLocaleString() );
+                + countryPopulation.toLocaleString() );
             };
-            
         }
+
+// TEST SELECT
+        // Gets selected country from dropdown menu
+        $('#countriesList').change(function () {
+            let val = $(this).val();
+        });
+        // Gets selected country from dropdown menu
+        // $('#countriesList').change(function(){
+        //     console.log( $(this).val() );
+        // })
+
+        // if ( dropdownCountry == countryCode ) {
+        //     // Shows countries name and population on click
+        //     if (feature.properties.name && countryPopulation != 'NaN') {
+        //         layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
+        //                         + countryPopulation.toLocaleString() + ' ' + 'people' );
+        //     } else {
+        //         layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
+        //                         + countryPopulation.toLocaleString() );
+        //     }
+        // }
+
+
 
         geojson = L.geoJson(
             countriesData,
