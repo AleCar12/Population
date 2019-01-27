@@ -30,19 +30,19 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             document.getElementById("countriesList").innerHTML += html;
         }
 
-        
+
         // Choropleth countries
         function getColor(population) {
-            if (population > 50000000) { // 50 milioni
+            if (population > 50000000) { // 50 milion
                 return '#006d2c'
-            } else if (population > 25000000) { // 25 milioni
+            } else if (population > 25000000) { // 25 milion
                 return '#2ca25f'
-            } else if (population > 10000000) { // 10 milioni
-                return '#2ca25f'
-            } else if (population > 5000000) { // 5 milioni
+            } else if (population > 10000000) { // 10 milion
                 return '#66c2a4'
-            } else if (population > 1000000) { // 1 milione
-                return '#b2e2e2'
+            } else if (population > 5000000) { // 5 milion
+                return '#99d8c9'
+            } else if (population > 1000000) { // 1 milion
+                return '#ccece6'
             } else if (population > 0) {
                 return '#edf8fb'
             } else {
@@ -133,6 +133,7 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
         $('#countriesList').change(function () {
             let val = $(this).val();
         });
+
         // Gets selected country from dropdown menu
         // $('#countriesList').change(function(){
         //     console.log( $(this).val() );
