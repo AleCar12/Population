@@ -7,7 +7,7 @@
     <link rel="icon" href="images/faviconLogo.png" type="image/png" />
     
     <!-- Import JQuery -->
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <!-- Import FullPage.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.js"></script>
@@ -46,10 +46,13 @@
 </head>
 
 <body>
+
+    <!-- White square -->
+    <div id="whiteSquare"></div>
     <div id="fullpage">
 
         <!-- Header -->
-        <div class="section fp-auto-height-responsive gifBg">
+        <div class="section fp-auto-height-responsive gifBg" id="firstSection">
             
             <!-- Navbar -->
             <div class="center-align">
@@ -141,6 +144,7 @@
             </div>
         </main>
 
+
     </div>
 
     <script>
@@ -157,7 +161,7 @@
         });
 
         new fullpage('#fullpage', {
-            anchors: ['firstPage', 'secondPage', 'thirdPage']
+            anchors: ['firstPage', 'secondPage']
         });
 
     </script>

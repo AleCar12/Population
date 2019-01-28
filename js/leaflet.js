@@ -1,8 +1,11 @@
+setTimeout( function () { $('#whiteSquare').fadeOut('slow')}, 2000 );
+
+
 var map = L.map('mapid', { scrollWheelZoom:false }).setView([20, -1], 2);
 
 // Crates map
 var CartoDB_PositronNoLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
 }).addTo(map);
 // Add Countries labels on map
 var CartoDB_PositronOnlyLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
