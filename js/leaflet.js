@@ -125,7 +125,7 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             }
 
             // Shows countries name and population on click
-            if (feature.properties.name && countryPopulation != 'NaN') {
+            if (feature.properties.name && countryPopulation != 'Undefined') {
                 layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
                 + countryPopulation.toLocaleString() + ' ' + 'people' );
             } else {
