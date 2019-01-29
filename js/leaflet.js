@@ -1,4 +1,4 @@
-setTimeout( function () { $('#whiteSquare').fadeOut('slow')}, 2000 );
+setTimeout( function () { $('#whiteSquare').fadeOut('slow')}, 500 );
 
 
 var map = L.map('mapid', { scrollWheelZoom:false }).setView([20, -1], 2);
@@ -72,6 +72,7 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
                 opacity: 1,
                 fillOpacity: 0.7
             }
+
         }
         
 
@@ -114,9 +115,11 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             var countryId = feature.id,
             countryData = populationData.filter(function(d) { return d['Country Code'] === countryId; }),
             countryPopulation = 0;
+            countrySelected = 0;
             
             if (countryData.length > 0) {
-                countryPopulation = parseInt(countryData[0]['']); 
+                countryPopulation = parseInt(countryData[0]['']);
+                countrySelected = countryData[0]['Country Name'];
             } else {
                 countryPopulation = 'NaN';
             }
@@ -130,31 +133,7 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
                 + countryPopulation.toLocaleString() );
             };
         }
-
-// TEST SELECT
-        // Gets selected country from dropdown menu
-        $('#countriesList').change(function () {
-            let val = $(this).val();
-        });
-
-        // Gets selected country from dropdown menu
-        // $('#countriesList').change(function(){
-        //     console.log( $(this).val() );
-        // })
-
-        // if ( dropdownCountry == countryCode ) {
-        //     // Shows countries name and population on click
-        //     if (feature.properties.name && countryPopulation != 'NaN') {
-        //         layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
-        //                         + countryPopulation.toLocaleString() + ' ' + 'people' );
-        //     } else {
-        //         layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
-        //                         + countryPopulation.toLocaleString() );
-        //     }
-        // }
-
-
-
+        
         geojson = L.geoJson(
             countriesData,
             {

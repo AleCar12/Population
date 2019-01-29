@@ -36,6 +36,10 @@
     <!-- Leaflet mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+    <!-- Select2.js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
     <!-- Materialize -->
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -48,7 +52,21 @@
 <body>
 
     <!-- White square -->
-    <div id="whiteSquare"></div>
+    <div id="whiteSquare">
+        <div class="preloader-wrapper big active" id="preloader">
+            <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper center">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="fullpage">
 
         <!-- Header -->
@@ -104,21 +122,7 @@
         </div>
         
         <!-- Content -->
-        <main class="section fp-auto-height-responsive">
-            <div class="container">
-                <!--Countries dropdown list -->
-                <div class="input-field">
-                    <select id="countriesList" class="browser-default"></select>
-                </div>
-            </div>
-
-            <!-- Handelbars -->
-            <script id = "countriesTemplate" type = "text/x-handlebars-template" >
-        
-                <option value="{{ id }}">{{ country }}</option>
-                    
-            </script>
-
+        <div class="section fp-auto-height-responsive">
             <!-- Leaflet Map -->
             <div id="mapid"></div>
             <!-- Import map -->
@@ -142,9 +146,96 @@
                 </div>
                 <a href="#mapModal" class="btn-floating btn-large waves-effect waves-light green left modal-trigger tooltipped" data-position="left" data-tooltip="Need help?" id="helpMap"><i class="large material-icons">help_outline</i></a>
             </div>
-        </main>
+        </div>
 
+        <!-- Country selection -->
+        <div class="section fp-auto-height-responsive">
+            <div class="container">                
+                
+                <!-- <form autocomplete="off">
+                    <div class="autocomplete" style="width:300px;">
+                        <input id="myInput" type="text" name="myCountry" placeholder="Country">
+                        <p class="demo"></p>
+                    </div>
+                    <button onclick="search()">Search</button>
+                </form>
 
+                <script>
+                    autocomplete(document.getElementById("myInput"), countries);
+                </script> -->
+
+                <h3 class="center">Country codes</h3>
+
+                <h5 class="center" id="title3">
+                    Select any country from the dropdown list and discover it's country code!
+                </h5>
+                
+                <!-- Countries dropdown list -->
+                <div class="input-field">
+                    <select id="countriesList" class="browser-default" onchange="myFunction();"></select>
+                </div>
+
+                <h2 id="result" class="center-align"></h2>
+        
+                <!-- Handelbars -->
+                <script id="countriesTemplate" type="text/x-handlebars-template">s
+                    <option value="{{ id }}" id="countryList">{{ country }}</option>
+                </script>
+
+                <!-- Get selected value -->
+                <script>
+                    function myFunction() {
+                        // Get current value
+                        var selectedValue = document.getElementById('countriesList').value;
+                        
+                        // Write new value in HTML
+                        if ( selectedValue ) {
+                            $("#result").text( 'The country code is: ' + selectedValue );
+                        }
+                    }
+                    myFunction();
+                </script>
+        
+        
+                <!-- <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="Country" type="text" class="validate">
+                                <label for="Country">Country</label>
+                            </div>
+                        </div>
+                    </form>
+                </div> -->
+        
+            </div>
+
+            <footer class="page-footer green lighten-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">Thank you for visiting</h5>
+                        </div>
+                        <div class="col l4 offset-l2 s12">
+                            <h5 class="white-text">Links</h5>
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="https://twitter.com/acarboni95">Twitter</a></li>
+                                <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/alessandrocarbonidesign/">Instagram</a></li>
+                                <li><a class="grey-text text-lighten-3" href="https://www.pinterest.it/alexcarboni12/">Pinterest</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="grey-text text-lighten-4 center" id="bottomLove">Made with &#10084; by <a href="https://alecarboni.myportfolio.com/">Alessandro Carboni</a> </p>
+                </div>
+                <!-- <div class="footer-copyright">
+                    <div class="container">
+                        © 2019 Alessandro Carboni
+                        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                    </div>
+                </div> -->
+            </footer>
+        
+        </div>
     </div>
 
     <script>
@@ -161,7 +252,7 @@
         });
 
         new fullpage('#fullpage', {
-            anchors: ['firstPage', 'secondPage']
+            anchors: ['firstPage', 'secondPage', 'thirdPage']
         });
 
     </script>
