@@ -91,7 +91,7 @@
                                 to a wider audience. Demographic data can play an important role in understanding the social and
                                 economic developments of our time.
                             </p><br>
-            
+                            <div class="divider"></div>
                             <p>
                                 <h4> Credits </h4>
                                 This site is brougth to you by Alessandro Carboni, an Interacion Design student at Quasar Istitute
@@ -121,7 +121,7 @@
             </div>
         </div>
         
-        <!-- Content -->
+        <!-- Map -->
         <div class="section fp-auto-height-responsive">
             <!-- Leaflet Map -->
             <div id="mapid"></div>
@@ -133,10 +133,33 @@
                 <div id="mapModal" class="modal">
                     <div class="modal-content">
                         <p>
-                            <h4> Welcome, </h4>
-                            this site aims to make demography – the study of human populations – accessible
-                            to a wider audience. Demographic data can play an important role in understanding the social and
-                            economic developments of our time.
+                            <h4> How to use </h4>
+                            <p> Just click on any of the countries on the map and a popup will apper, showing the <b>country</b> name and it's <b>population</b>. </p>
+                            <div class="divider"></div>
+                            <h4> Results </h4>
+                            <p> 
+                                Normally the population will appear, but some times it whil appear <b>Undefined</b> because the JSON doesn't have that country data.
+ 
+                                The color of the countries determines how big is the population. <br>
+                                <div class="legend">
+                                    <div class="squareColor" id="fiftyMil"></div>   <div class="legendText"> > 50 milion people </div>
+                                </div>
+                                <div class="legend">
+                                    <div class="squareColor" id="twoFiveMil"></div> <div class="legendText"> > 25 milion people </div>
+                                </div>
+                                <div class="legend">
+                                    <div class="squareColor" id="tenMil"></div>     <div class="legendText"> > 10 milion people </div>
+                                </div>
+                                <div class="legend">
+                                    <div class="squareColor" id="fiveMil"></div>    <div class="legendText"> > 5 milion people </div>
+                                </div>
+                                <div class="legend">
+                                    <div class="squareColor" id="oneMil"></div>     <div class="legendText"> < 1 milion people </div>
+                                </div>
+                                <div class="legend">
+                                    <div class="squareColor" id="noMil"></div>      <div class="legendText"> Undefined </div>
+                                </div class="legend">
+                            </p>
                         </p>
                     </div>
                 
@@ -148,7 +171,7 @@
             </div>
         </div>
 
-        <!-- Country selection -->
+        <!-- Country code selection -->
         <div class="section fp-auto-height-responsive">
             <div class="container">                
                 

@@ -103,9 +103,49 @@ main {
     z-index: 1;
 }
 
+.legend{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.legendText{
+    margin-left: 5px;
+}
+
 #mapModal{
     position: relative;
-    bottom: 750px;
+    bottom: 800px;
+}
+
+.squareColor{
+    height: 15px;
+    width: 15px;
+    margin-bottom: 10px;
+}
+
+#fiftyMil{
+    background-color: #006d2c;
+}
+
+#twoFiveMil{
+    background-color: #2ca25f;
+}
+
+#tenMil{
+    background-color: #66c2a4;
+}
+
+#fiveMil{
+    background-color: #99d8c9;
+}
+
+#oneMil{
+    background-color: #ccece6;
+}
+
+#noMil{
+    background-color: #D1D1D1;
 }
 
 #whiteSquare{

@@ -121,7 +121,7 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
                 countryPopulation = parseInt(countryData[0]['']);
                 countrySelected = countryData[0]['Country Name'];
             } else {
-                countryPopulation = 'NaN';
+                countryPopulation = 'Undefined';
             }
 
             // Shows countries name and population on click
