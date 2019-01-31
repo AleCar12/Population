@@ -82,9 +82,9 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
             var layer = e.target;
             
             layer.setStyle({
-                fillColor: '#8D8787',
+                fillColor: '#EEFF6F',
                 weight: 3,
-                color: '#8D8787',
+                color: '#FFE433',
                 dashArray: '',
                 fillOpacity: 0.7
             });
