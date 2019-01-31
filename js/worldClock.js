@@ -11,6 +11,6 @@ d3.json("http://api.population.io:80/1.0/population/World/today-and-tomorrow/?fo
     
     // Add every second peopleBornPerSecond and replaces the new
     var populationNow = parseInt($("#worldClock").text());
-    let dots = d3.format(",");
-    let newWorldPopulationToday = setInterval(function() { $("#worldClock").text( dots( populationNow = populationNow + peopleBornPerSecond) ); }, 1000);    
+    let comma = d3.format(",");
+    let newWorldPopulationToday = setInterval(function() { $("#worldClock").text( comma( populationNow = populationNow + peopleBornPerSecond) ); }, 1000);    
 });
