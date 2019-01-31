@@ -121,11 +121,11 @@ d3.json("./countries/countries.geo.json", function(countriesData) {
                 countryPopulation = parseInt(countryData[0]['']);
                 countrySelected = countryData[0]['Country Name'];
             } else {
-                countryPopulation = 'Undefined';
+                countryPopulation = 'No data available';
             }
 
             // Shows countries name and population on click
-            if (feature.properties.name && countryPopulation != 'Undefined') {
+            if (feature.properties.name && countryPopulation != 'No data available') {
                 layer.bindPopup('<b>' + feature.properties.name + '</b><br>'
                 + countryPopulation.toLocaleString() + ' ' + 'people' );
             } else {
